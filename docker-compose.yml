@@ -1,0 +1,14 @@
+services:
+  app:
+    build: .
+    ports:
+      - "4000:3000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - NODE_ENV=production
+      - DB_PATH=/app/data/subboss/subboss.db
+      - JWT_SECRET=${JWT_SECRET:-subboss-default-highly-secure-secret-pls-change}
+    restart: always
+
+# Note: Update server.ts to store the DB in /app/data for persistence

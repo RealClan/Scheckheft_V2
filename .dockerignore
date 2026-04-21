@@ -1,0 +1,5 @@
+node_modules
+dist
+subboss_service.db
+.env
+.git
